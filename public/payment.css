@@ -1,0 +1,11 @@
+.col1{
+    font-weight: bold;
+}
+tr,td,th{
+    width: 10px;
+}
+.torient{
+    margin-top: 5%;
+    width: 500px;
+    margin-left: 30%;
+}
