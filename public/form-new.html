@@ -20,7 +20,8 @@
       </div>
     </div>
     <form class="row g-3" style="padding: 20px 10% 10% 10%" method="post" action="/addUser">
-        <div class="col-md-6">
+      <h5 class="display-5" >Personal Details</h5>
+      <div class="col-md-6">
             <label for="inputName" class="form-label">First Name</label>
             <input type="text" class="form-control" id="inputName" name="fname"/>
           </div>
@@ -28,6 +29,15 @@
           <div class="col-md-6">
             <label for="inputName" class="form-label">Last Name</label>
             <input type="text" class="form-control" id="inputName" name="lname"/>
+          </div>
+
+          <div>
+            <select class="form-select" aria-label="Default select example" name="gender">
+              <option selected>Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
           </div>
 
           <div class="fallbackDatePicker">
@@ -129,7 +139,7 @@
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" />
+        <input type="password" class="form-control" id="inputPassword" />
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
@@ -155,29 +165,178 @@
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>SelectState</option>
+        <input id="inputState" class="form-control" name="state">
+          <!-- <option selected>SelectState</option>
           <option>Delhi</option>
           <option>Uttar Pradesh</option>
           <option>Uttarakhand</option>
-        </select>
+        </select> -->
       </div>
       <div class="col-md-2">
         <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip" />
+        <input type="text" class="form-control" id="inputZip" name="zip"/>
       </div>
       <div class="col-12"></div>
       <div class="mb-3">
-        <label for="formFile" class="form-label"
-          >Upload your COVID-19 Test Report</label
-        >
+        <label for="formFile" class="form-label">
+          Upload your COVID-19 Test Report
+        </label>
+
         <input class="form-control" type="file" id="formFile" />
       </div>
+
+
+
+      <h5 class="display-5" style="margin-bottom: 30px;" >Medical Details</h5>
+      <div class="row mb-3">
+
+        <span>
+          <label for="blood">Blood Group:</label>
+          <select id="blood" name="blood" class="row-form-select">
+            <option selected>Select</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+
+          </select>
+        </span>
+      </div>
+
+
+      <fieldset class="row mb-3">
+
+        <legend class="col-form-label">Have you ever received a dose of the COVID-19 vaccine? (Y/N)</legend>
+
+        <input type="text" name="rcvdDose" value="">
+
+      </fieldset>
+
+      <fieldset class="row mb-3">
+
+        <legend class="col-form-label">Have you ever had a positive test for COVID-19 or has a doctor ever told you that you had COVID-19? (Y/N)</legend>
+        <input type="text" name="covidPositive" value="">
+
+
+      </fieldset>
+
+      <fieldset class="row mb-3">
+
+        <legend class="col-form-label">Are you pregnant or breastfeeding? (Y/N) </legend>
+        <input type="text" name="pregnantOrbreastfeeding" value="">
+        <!-- <div class="col-sm-10">
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+            <label class="form-check-label" for="gridRadios1">
+              Yes
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              No
+            </label>
+          </div>
+        </div> -->
+
+      </fieldset>
+
+      <fieldset class="row mb-3">
+
+        <legend class="col-form-label">Are you allergic to anything? (Y/N)</legend>
+        <input type="text" name="allergic" value="">
+        <!-- <div class="col-sm-10">
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+            <label class="form-check-label" for="gridRadios1">
+              Yes
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              No
+            </label>
+          </div>
+        </div> -->
+
+        <div class="mb-3 row" style="margin-top: 20px;">
+          <label for="inputallergy" class="col-sm-2 col-form-label">If Yes, then allergic to:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword">
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="row mb-3">
+
+        <legend class="col-form-label">Do you have any of the following medical conditions? (Check all that apply)</legend>
+
+        <div class="col-sm-10">
+
+          <div class="form-check">
+            <input class="form-check-input diab" type="checkbox" value="diab" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Diabetes
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Blood Pressure
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Sugar
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              TB
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Asthma
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Epilepsy
+            </label>
+          </div>
+
+
+        </div>
+
+      </fieldset>
+
+
+
       <div class="col-12" style="text-align: center">
-      <!--   <button type="submit" class="btn btn-primary">Submit</button> -->
+      <button type="submit" class="btn btn-primary" name="button">Submit</button>
 
       <a href="/appointment">
-        <button type="button" name="button"  class="btn btn-primary">Submit</button>
+        <button type="button" name="button" class="btn btn-primary">Proceed</button>
       </a>
 
       </div>

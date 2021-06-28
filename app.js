@@ -43,7 +43,7 @@ app.post("/", function(req, res) {
 });
 
 app.get("/form", function(req, res) {
-  res.sendFile(__dirname + "/public/form.html");
+  res.sendFile(__dirname + "/public/form-new.html");
 });
 
 
@@ -223,16 +223,60 @@ app.get("/userDB", function(req, res) {
 });
 
 app.get("/addUser", function(req, res) {
-  res.sendFile(__dirname + "/public/form.html");
+  res.sendFile(__dirname + "/public/form-new.html");
 });
 
 app.post("/addUser", function(req, res) {
 
   const fname = _.capitalize(req.body.fname);
   const lname = _.capitalize(req.body.lname);
+
   const city = _.capitalize(req.body.city);
+  const state = _.capitalize(req.body.state);
+  const zip = req.body.zip;
+
   const phone = req.body.phone;
   const email = req.body.email;
+
+  var d = new Date();
+  const currentYear = d.getFullYear();;
+  const age = currentYear - req.body.year;
+
+  var bloodGroup = req.body.blood;
+
+  var gender = req.body.gender;
+
+  if(gender === '1')
+  gender = 'Male';
+
+  else if(gender === '2')
+  gender = 'Female';
+
+  else
+  gender = 'Other';
+
+  const rcvdDose = req.body.rcvdDose;
+  const covidPositive = req.body.covidPositive;
+  const pregnantOrbreastfeeding = req.body.pregnantOrbreastfeeding;
+  const allergic = req.body.allergic;
+
+  const userInfo = {
+    age: age,
+    gender: gender,
+    city: city,
+    state: state,
+    zip: zip,
+    bloodGroup: bloodGroup,
+    recievedDose: rcvdDose,
+    covidPositive: covidPositive,
+    pregnantOrbreastfeeding: pregnantOrbreastfeeding,
+    allergic: allergic
+  };
+
+  console.log(userInfo);
+
+
+
 
 
   const newUser = new User({
