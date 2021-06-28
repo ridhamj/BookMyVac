@@ -1,7 +1,7 @@
 # Introduction
 BookMyVac. , is a web-based platform to connect users directly with nearby hospitals and facilitate the process of scheduling an appointment with the hospital to get vaccinated.
 
-# Project Link
+Project Link:
 https://bookmyvac.herokuapp.com/
 
 
